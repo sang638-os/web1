@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Test Phần Mềm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2563eb;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    button {
+      padding: 10px 16px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #15803d;
+    }
+    .log {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      font-family: monospace;
+    }
+    footer {
+      text-align: center;
+      color: #64748b;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Website kiểm tra phần mềm</h1>
+    <p>Dùng để test web server, WAF, Cloudflare, Nginx…</p>
+  </header>
+
+  <main>
+    <h2>Trạng thái hệ thống</h2>
+    <p>Nếu bạn thấy trang này, web server đang hoạt động bình thường.</p>
+
+    <button onclick="testClick()">Test JavaScript</button>
+
+    <div id="log" class="log">Chưa có hoạt động</div>
+
+    <h2>Test bảo mật</h2>
+    <p>Ví dụ chuỗi test (dùng cho WAF):</p>
+    <pre>&lt;script&gt;alert('XSS')&lt;/script&gt;</pre>
+    <pre>' OR 1=1 --</pre>
+  </main>
+
+  <footer>
+    © 2025 - Web test đơn giản
+  </footer>
+
+  <script>
+    function testClick() {
+      const now = new Date().toLocaleString();
+      document.getElementById('log').innerText = 'JavaScript hoạt động OK - ' + now;
+    }
+  </script>
+</body>
+</html>
